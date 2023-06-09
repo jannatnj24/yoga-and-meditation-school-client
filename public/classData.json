@@ -1,0 +1,71 @@
+[
+    {
+  "classes": [
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Hatha Yoga",
+      "instructor": "Emily Adams",
+      "students": 44,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 120
+    },
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Vinyasa Flow",
+      "instructor": "Michael Davis",
+      "students": 33,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 150
+    },
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Restorative Yoga",
+      "instructor": "Sophia Roberts",
+      "students": 62,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 100
+    },
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Restorative Yoga",
+      "instructor": "Sophia Roberts",
+      "students": 64,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 100
+    },
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Yin Yoga",
+      "instructor": "Daniel Brown",
+      "students": 66,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 130
+    },
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Yin Yoga",
+      "instructor": "Daniel Brown",
+      "students": 65,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 136
+    },
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Ashtanga Yoga",
+      "instructor": "Olivia Wilson",
+      "students": 69,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 90
+    },
+    {
+      "image": "https://i.ibb.co/60NzbrS/claSS1.jpg",
+      "name": "Kundalini Yoga",
+      "instructor": "Thomas Jackson",
+      "students": 19,
+      "instructorImage": "https://i.ibb.co/K0gcJfd/Ins1.jpg",
+      "price": 140
+    }
+    
+  ]
+}
+]
