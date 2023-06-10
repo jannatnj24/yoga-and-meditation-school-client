@@ -6,7 +6,23 @@ import { AuthContext } from '../../../Components/Providers/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
-    
+    const [error, setError] = useState('');
+
+    const { createUser } = useContext(AuthContext);
+    const HandelSignUP = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const password = form.password.value;
+        console.log(name, photo, email, password)
+        Swal.fire('Hurrah', ' Create account successfully', 'success');
+        setError('')
+        if (password.length < 6) {
+            setError('please set password up to six character')
+            return
+        }
 
         createUser(email, password)
             .then(result => {
