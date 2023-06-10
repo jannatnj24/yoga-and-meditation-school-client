@@ -26,15 +26,15 @@ const Login = () => {
       
   
       
-      SignIn(email,password)
-      .then(result => {
+    //   SignIn(email,password)
+    //   .then(result => {
       
-          const LoggedUser = result.user;
-          console.log(LoggedUser);
-          form.reset();
-          navigate(from,{replace :true});
+    //       const LoggedUser = result.user;
+    //       console.log(LoggedUser);
+    //       form.reset();
+    //       navigate(from,{replace :true});
          
-        })
+    //     })
         .catch(error => {
           console.log(error);
           setError('wrong input please input valid data');
