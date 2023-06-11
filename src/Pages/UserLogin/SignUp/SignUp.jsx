@@ -8,33 +8,65 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const SignUp = () => {
     const [error, setError] = useState('');
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser,profileUpdate } = useContext(AuthContext);
     const HandelSignUP = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, photo, email, password)
-        Swal.fire('Hurrah', ' Create account successfully', 'success');
-        setError('')
-        if (password.length < 6) {
-            setError('please set password up to six character')
-            return
-        }
-
+        console.log(name, email, password)
+        const image = event.target.image.files[0]
+        const formData = new FormData()
+        formData.append('image', image)
+    
+        const url = `https://api.imgbb.com/1/upload?key=${
+          import.meta.env.VITE_IMG_KEY
+        }`
+        fetch(url, {
+          method: 'POST',
+          body: formData,
+        })
+          .then(res => res.json())
+          .then(imageData => {
+            const imageUrl = imageData.data.display_url
+    
+            
         createUser(email, password)
             .then(result => {
 
+
                 const createdUser = result.user;
                 console.log(createdUser);
-               
+                profileUpdate(name, imageUrl)
+                .then(() => {
+                    const saveUser = { name: name, email:email }
+                    fetch('http://localhost:5000/users', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(saveUser)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                form.reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'User created successfully.',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                navigate('/');
+                            }
+                    })
+                    
+                    .catch(error => console.log(error))
             })
-            .catch(error => {
-                console.log(error);
-                setError('wrong input please input valid data');
-            });
+            })
+        })
     }
 
     return (
@@ -55,12 +87,18 @@ const SignUp = () => {
                                     </label>
                                     <input type="text" name='name' placeholder="name" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Photo url</span>
-                                    </label>
-                                    <input type="text" name='photo' placeholder="Enter photo url" className="input input-bordered" required />
-                                </div>
+                                <div>
+              <label htmlFor='image' className='block mb-2 text-sm'>
+                Select Image:
+              </label>
+              <input
+                required
+                type='file'
+                id='image'
+                name='image'
+                accept='image/*'
+              />
+            </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>

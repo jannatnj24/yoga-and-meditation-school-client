@@ -14,18 +14,26 @@ const SocialLogin = () => {
         googleSignIn()
         .then(result=>{
             const user=result.user;
-            Swal.fire('Hey', 'Login successful', 'success');
-             navigate(from,{replace :true});
-            
-          })
-          .catch(error=>{
-            console.log(error.message)
-          })
-        }
-    
+            const storeUser = { name: user.displayName, email: user.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(storeUser)
+                        })
+                            .then(res => res.json())
+                            .then(() => {
+                                navigate(from, { replace: true });
+                            })
+                      })
+                    }
    
     return (
-       
+        <div className='mb-4'>  
+               <button onClick={handleGoogleSignIn} className="btn gap-2 bg-blue-400 text-black w-full mb-4"  ><FaGoogle></FaGoogle>Google</button>
+                
+   </div>
     );
 };
 
