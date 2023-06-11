@@ -36,35 +36,7 @@ const SignUp = () => {
             .then(result => {
 
 
-                const createdUser = result.user;
-                console.log(createdUser);
-                profileUpdate(name, imageUrl)
-                .then(() => {
-                    const saveUser = { name: name, email:email }
-                    fetch('http://localhost:5000/users', {
-                        method: 'POST',
-                        headers: {
-                            'content-type': 'application/json'
-                        },
-                        body: JSON.stringify(saveUser)
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            if (data.insertedId) {
-                                form.reset();
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: 'User created successfully.',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-                                navigate('/');
-                            }
-                    })
-                    
-                    .catch(error => console.log(error))
-            })
+                
             })
         })
     }

@@ -36,12 +36,12 @@ const profileUpdate=(displayName,photoURL)=>{
     return updateProfile(auth.currentUser,{displayName,photoURL})
 }
 
-// useEffect(()=>{
-//     const unSubscribe=onAuthStateChanged(auth,currentUser=>{
-//      setUser(currentUser);
-//      setLoading(false);
+useEffect(()=>{
+    const unSubscribe=onAuthStateChanged(auth,currentUser=>{
+     setUser(currentUser);
+     setLoading(false);
 
-//     });
+    });
 
     return () =>unSubscribe();
     
