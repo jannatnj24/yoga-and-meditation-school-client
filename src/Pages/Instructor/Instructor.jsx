@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../Components/SectionTitle/SectionTitle';
+import InstructorData from './InstructorData';
 
 const Instructor = () => {
     const [ins, setIns] = useState([]);
@@ -23,10 +24,10 @@ const Instructor = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4 gap-4 ">
         {
-                 ins?.map(i => <ClassData
-                    key={c._id}
-                  c={c}
-                 ></ClassData>)
+                 ins?.map(i => <InstructorData
+                    key={i._id}
+                  i={i}
+                 ></InstructorData>)
               }
        </div>
        </section>
