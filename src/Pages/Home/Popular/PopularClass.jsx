@@ -6,20 +6,21 @@ const PopularClass = () => {
     const [Class, setClass] = useState([]);
 
     useEffect(() => {
-        fetch('classData.json')
+        fetch('http://localhost:5000/class')
             .then(res => res.json())
 
-            .then(data => (data?.map(newData=>setClass(newData))));
+            .then(data => {setClass(data);
+            });
     }, [])
     return (
         <section>
         <SectionTitle
-            subHeading={'Yoga School'}
+            subHeading={'Yoga'}
             heading={"Popular Classes"}
         ></SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 ">
           {
-                   Class?.classes?.map(Class => <ClassLoadData
+                   Class?.map(Class => <ClassLoadData
                     Class={Class}
                    ></ClassLoadData>)
                 }

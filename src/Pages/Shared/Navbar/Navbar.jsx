@@ -11,7 +11,7 @@ const Navbar = () => {
   }
   console.log(user)
     return (
-        <div  className="navbar  bg-slate-600 fixed z-10 bg-opacity-30 max-w-screen-xl text-blue-900">
+        <div  className="navbar  bg-slate-900 fixed z-10 bg-opacity-30  max-w-screen-xl text-blue-900">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn bg-blue-100 lg:hidden">
@@ -30,7 +30,7 @@ const Navbar = () => {
             </ul>
           </div>
            
-          <Link className="btn btn-ghost font-bold normal-case text-xl "> <span className="text-blue-600">YOGA AND MEDITATION SCHOOL</span>
+          <Link className="btn btn-ghost font-bold normal-case text-xl "> <span className="text-green-600">YOGA AND MEDITATION SCHOOL</span>
           </Link>
         </div>
         <div className="navbar-center  hidden lg:flex">
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
         <div className=" navbar-end">
           {user && <img className='rounded-full w-[30px] md:m-4' src={user.photoURL}  /> }
-           {user ? <button onClick={handleLogOut} className="btn h-[40px] bg-blue-400 btn-sm md:m-4">Log Out</button>:<Link to="/login" className="btn btn-sm  bg-blue-400 md:mx-4">Login</Link> }
+           {user ? <p onClick={handleLogOut} className=" text-white font-bold mx-2">Log Out</p>:<Link to="/login" className=" text-white mx-2 font-bold">Login</Link> }
         </div>
       </div>
     );

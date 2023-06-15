@@ -6,21 +6,22 @@ const PopularInstructor = () => {
     const [Instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        fetch('classData.json')
+        fetch('http://localhost:5000/instructor')
             .then(res => res.json())
 
-            .then(data => (data?.map(newData=>setInstructors(newData))));
+            .then(data => {setInstructors(data);
+            });
     }, [])
     return (
         <section>
         <SectionTitle
-            subHeading={'Yoga School'}
+            subHeading={'Yoga'}
             heading={"Popular Instructors"}
         ></SectionTitle>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
               {
-                 Instructors?.classes?.map(Instructor => <InstructorLoadData
+                 Instructors?.map(Instructor => <InstructorLoadData
                     Instructor={Instructor}
                  ></InstructorLoadData>)
               }

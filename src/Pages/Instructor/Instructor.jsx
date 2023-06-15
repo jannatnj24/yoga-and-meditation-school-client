@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import ClassData from './ClassData';
 import SectionTitle from '../../Components/SectionTitle/SectionTitle';
 
-const Classes = () => {
-    const [classes, setClasses] = useState([]);
+const Instructor = () => {
+    const [ins, setIns] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('http://localhost:5000/instructors')
             .then(res => res.json())
             .then((data) => {
                 console.log(data);
-                setClasses(data);
+                setIns(data);
               });
     }, [])
       
@@ -19,12 +18,12 @@ const Classes = () => {
         <section className='p-14'>
         <SectionTitle 
         subHeading={"All"}
-        heading={"Class"}
+        heading={"Instructors"}
         ></SectionTitle>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4 gap-4 ">
         {
-                 classes?.map(c => <ClassData
+                 ins?.map(i => <ClassData
                     key={c._id}
                   c={c}
                  ></ClassData>)
@@ -34,4 +33,5 @@ const Classes = () => {
     );
 };
 
-export default Classes;
+
+export default Instructor;
