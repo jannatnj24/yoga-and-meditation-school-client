@@ -74,10 +74,10 @@ const SignUp = () => {
             {/* <Helmet>
                 <title>Disney-World | signUp</title>
             </Helmet> */}
-            <div className="hero min-h-screen  bg-slate-100">
+            <div className="hero min-h-screen  p-14 bg-slate-100">
                 <div className="hero-content ">
 
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-200">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-purple-200">
                         <div className="card-body">
                             <h1 className="text-3xl text-center font-bold"> Please Sign Up</h1>
                             <form onSubmit={HandelSignUP}>
@@ -89,16 +89,16 @@ const SignUp = () => {
                                 </div>
                                 <div>
               <label htmlFor='image' className='block mb-2 text-sm'>
-                Select Image:
-              </label>
-              <input
-                required
-                type='file'
-                id='image'
-                name='image'
-                accept='image/*'
-              />
-            </div>
+                               Select Image:
+                                   </label>
+                                          <input
+                                             required
+                                            type='file'
+                                           id='image'
+                                          name='image'
+                                          accept='image/*'
+                                          />
+                                         </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -115,7 +115,7 @@ const SignUp = () => {
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input className="btn bg-blue-400 hover:bg-rose-200 text-black" type="submit" value="Create Account" />
+                                    <input className="btn bg-purple-400 hover:bg-rose-200 text-black" type="submit" value="Create Account" />
                                 </div>
                             </form>
                             <p className='my-4 text-center'> Already Have an Account? <Link className='text-fuchsia-600 font-bold' to="/login">Login</Link> </p>

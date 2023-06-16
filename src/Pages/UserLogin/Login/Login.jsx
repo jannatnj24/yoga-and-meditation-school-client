@@ -49,10 +49,10 @@ const Login = () => {
             {/* <Helmet>
                 <title>Disney-World | login</title>
             </Helmet> */}
-            <div className="hero min-h-screen bg--100">
+            <div className="hero min-h-screen  p-14">
             <div className="hero-content ">
                
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-200">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-purple-200">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold">Login Please</h1>
                         <form onSubmit={HandelLogin}>
@@ -72,7 +72,7 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn bg-blue-400 hover:bg-rose-200 text-black" type="submit" value="Login" />
+                                <input className="btn bg-purple-400 hover:bg-rose-200 text-black" type="submit" value="Login" />
                             </div>
                         </form>
                         <p className='my-4 text-center'>Don't have an account<Link className='text-fuchsia-600  font-bold' to="/signUp">Sign Up</Link> </p>
