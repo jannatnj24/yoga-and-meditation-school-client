@@ -11,7 +11,7 @@ const Navbar = () => {
   }
   console.log(user)
     return (
-        <div  className="navbar  bg-slate-900 fixed z-10 bg-opacity-30  max-w-screen-xl text-blue-900">
+        <div  className="navbar  bg-lime-900 fixed z-10 bg-opacity-30  max-w-screen-xl text-blue-900">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn bg-blue-100 lg:hidden">
@@ -30,7 +30,7 @@ const Navbar = () => {
             </ul>
           </div>
            
-          <Link className="btn btn-ghost font-bold normal-case text-xl "> <span className="text-green-600">YOGA AND MEDITATION SCHOOL</span>
+          <Link className="btn btn-ghost font-bold normal-case text-xl "> <span className="text-yellow-600">YOGA AND MEDITATION SCHOOL</span>
           </Link>
         </div>
         <div className="navbar-center  hidden lg:flex">
