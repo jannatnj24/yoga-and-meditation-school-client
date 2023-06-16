@@ -21,8 +21,7 @@ const Login = () => {
       const email=form.email.value;
       const password=form.password.value;
       console.log(email,password);
-      Swal.fire('Hurrah', ' Login successfully', 'success');
-      setError('')
+      
       
   
       
@@ -31,6 +30,8 @@ const Login = () => {
       
           const LoggedUser = result.user;
           console.log(LoggedUser);
+          Swal.fire('Hurrah', ' Login successfully', 'success');
+         setError('')
           form.reset();
           navigate(from,{replace :true});
          
