@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBook, FaMoneyBill, FaUser } from 'react-icons/fa';
+import { FaBook, FaMoneyBill, FaSchool, FaUser } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
@@ -22,7 +22,8 @@ const Dashboard = () => {
       <ul className="menu p-4 w-80 h-full    text-base-content  bg-lime-600">
         
         <div>
-        <h2 className="text-white text-4xl font-bold mx-Auto ">Yoga School  </h2>
+        <h2 className='text-purple-600 mx-16 text-6xl'><FaSchool></FaSchool></h2>
+        <h2 className="text-purple-600 text-4xl font-bold mx-Auto ">Yoga School   </h2>
         </div>
         <div className="divider"></div>
         {
