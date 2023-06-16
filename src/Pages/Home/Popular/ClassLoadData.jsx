@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 
 const ClassLoadData = ({Class}) => {
-    console.log(Class)
+  useEffect(() => {
+    Aos.init({
+      multiple: true,
+    });
+  }, []);
+   
     const { students, image,availableSets,price, name } =Class;
     return (
-    <div className="card card-compact  bg-purple-100 shadow-xl mx-auto">
+    <div className="card card-compact aos-item bg-purple-100 shadow-xl mx-auto" data-aos="fade-up">
     <figure><img className='w-[400px] h-[300px]' src={image} alt="" /></figure>
     <div className="card-body">
       <h2 className="card-title"> class Name: {name}</h2>

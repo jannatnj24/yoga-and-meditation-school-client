@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 import ClassLoadData from './ClassLoadData';
 
+
 const PopularClass = () => {
     const [Class, setClass] = useState([]);
 
@@ -12,6 +13,7 @@ const PopularClass = () => {
             .then(data => {setClass(data);
             });
     }, [])
+   
     return (
         <section>
         <SectionTitle

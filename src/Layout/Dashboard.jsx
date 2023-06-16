@@ -7,7 +7,7 @@ const Dashboard = () => {
 //     const [isInstructor]=UseInstructor();
 //     const[cart]=UseCart();
 //    console.log(cart)
-  const isAdmin=false;
+  const isAdmin=true;
   const isInstructor=false;
       return (
           <div className="drawer lg:drawer-open">

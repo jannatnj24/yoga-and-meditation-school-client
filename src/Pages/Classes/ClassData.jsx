@@ -1,11 +1,13 @@
 import React from 'react';
 
+
 const ClassData = ({c}) => {
+ 
     const {name,price,availableSets, image}=c;
     return (
-        <div className= {`${availableSets === 0 ?
+        <div className=  {`${availableSets === 0 ?
             "card rounded card-compact h-full   bg-red-900 text-white  shadow-xl"
-            : "card  card-compact h-full bg-purple-100 shadow-xl"
+            : "card  card-compact h-full bg-purple-100 shadow-xl " 
             }`}>
           <figure><img className=' h-[200px] w-[400px] ' src={image} alt="" /></figure>
           <div className="card-body  ">
