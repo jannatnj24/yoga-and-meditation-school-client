@@ -1,4 +1,6 @@
+import {  useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { FaTrashAlt, FaUserAlt, FaUserEdit} from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
@@ -79,7 +81,6 @@ const ManageUsers = () => {
 
     return (
         <div>
-             <h2 className='text-4xl text-center text-black font-bold mb-20'>Users :{users.length}</h2>
            
             <div className="overflow-x-auto">
                 <table className="table  w-full ">
@@ -88,9 +89,9 @@ const ManageUsers = () => {
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Admin Role</th>
-                            <th>Instructor Role</th>
-                            <th>Action</th>
+                            <th>Admin </th>
+                            <th>Instructor </th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -101,10 +102,10 @@ const ManageUsers = () => {
                                 <td className='text-black'>{user.email}</td>
 
                                 <td>{ user.role === 'admin' ? 'admin' :
-                                    <button onClick={() => MakeAdmin(user)}  className="btn btn-ghost bg-sky-400  rounded-full text-black"><FaUserSecret></FaUserSecret></button> 
+                                    <button onClick={() => MakeAdmin(user)}  className="btn btn-ghost bg-purple-400  rounded-full text-black"><FaUserEdit></FaUserEdit></button> 
                                     }</td>
                                 <td>{ user.role === 'instructor' ? 'instructor' :
-                                    <button onClick={() => MakeInstructor(user)} className="btn btn-ghost bg-sky-400  rounded-full text-black"> <FaUserTie></FaUserTie></button> 
+                                    <button onClick={() => MakeInstructor(user)} className="btn btn-ghost bg-purple-400  rounded-full text-black"> <FaUserAlt></FaUserAlt></button> 
                                     }</td>
                                 <td><button  onClick={() => handleDelete(user)} className="btn btn-ghost rounded bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
                             </tr>)
