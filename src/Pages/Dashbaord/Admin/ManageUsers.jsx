@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
     const { data: users = [], refetch } = useQuery(['users'], async () => {
@@ -66,7 +67,7 @@ const ManageUsers = () => {
                             refetch();
                             Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'user has been deleted.',
                                 'success'
                             )
                         }
@@ -82,7 +83,6 @@ const ManageUsers = () => {
            
             <div className="overflow-x-auto">
                 <table className="table  w-full ">
-                    {/* head */}
                     <thead>
                         <tr className='bg-purple-400 text-black font-bold'>
                             <th>#</th>
