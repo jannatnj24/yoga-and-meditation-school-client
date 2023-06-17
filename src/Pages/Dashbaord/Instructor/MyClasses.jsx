@@ -9,7 +9,7 @@ const MyClasses = () => {
         
         console.log(user)
         useEffect(() => {
-            fetch(`http://localhost:5000/myClass/${user?.email}`)
+            fetch(`https://yoga-and-meditation-school-server-tau.vercel.app/myClass/${user?.email}`)
               .then((res) => res.json())
               .then((data) => {
                 console.log(data);

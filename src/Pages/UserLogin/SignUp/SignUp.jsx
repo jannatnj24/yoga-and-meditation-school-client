@@ -41,7 +41,7 @@ const SignUp = () => {
                 profileUpdate(name, imageUrl)
                 .then(() => {
                     const saveUser = { name: name, email:email }
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://yoga-and-meditation-school-server-tau.vercel.app/users', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

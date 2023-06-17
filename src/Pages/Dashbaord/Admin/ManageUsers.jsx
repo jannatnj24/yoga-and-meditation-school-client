@@ -5,12 +5,12 @@ import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
+        const res = await fetch('https://yoga-and-meditation-school-server-tau.vercel.app/users')
         return res.json();
     })
 
     const MakeAdmin = user =>{
-        fetch (`http://localhost:5000/users/admin/${user._id}`,{
+        fetch (`https://yoga-and-meditation-school-server-tau.vercel.app/users/admin/${user._id}`,{
             method :'PATCH'
         })
         .then(res => res.json())
@@ -29,7 +29,7 @@ const ManageUsers = () => {
         })
     }
     const MakeInstructor = user =>{
-        fetch (`http://localhost:5000/users/instructor/${user._id}`,{
+        fetch (`https://yoga-and-meditation-school-server-tau.vercel.app/users/instructor/${user._id}`,{
             method :'PATCH'
         })
         .then(res => res.json())
@@ -60,7 +60,7 @@ const ManageUsers = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${user?._id}`, {
+                fetch(`https://yoga-and-meditation-school-server-tau.vercel.app/users/${user?._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -102,10 +102,10 @@ const ManageUsers = () => {
                                 <td className='text-black'>{user.email}</td>
 
                                 <td>{ user.role === 'admin' ? 'admin' :
-                                    <button onClick={() => MakeAdmin(user)}  className="btn btn-ghost bg-purple-400  rounded-full text-black"><FaUserEdit></FaUserEdit></button> 
+                                    <button onClick={() => MakeAdmin(user)}  className="btn btn-ghost bg-purple-400  rounded text-black"><FaUserEdit></FaUserEdit></button> 
                                     }</td>
                                 <td>{ user.role === 'instructor' ? 'instructor' :
-                                    <button onClick={() => MakeInstructor(user)} className="btn btn-ghost bg-purple-400  rounded-full text-black"> <FaUserAlt></FaUserAlt></button> 
+                                    <button onClick={() => MakeInstructor(user)} className="btn btn-ghost bg-purple-400  rounded text-black"> <FaUserAlt></FaUserAlt></button> 
                                     }</td>
                                 <td><button  onClick={() => handleDelete(user)} className="btn btn-ghost rounded bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
                             </tr>)

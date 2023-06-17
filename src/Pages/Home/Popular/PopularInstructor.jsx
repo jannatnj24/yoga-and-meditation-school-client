@@ -6,7 +6,7 @@ const PopularInstructor = () => {
     const [Instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/instructor')
+        fetch('https://yoga-and-meditation-school-server-tau.vercel.app/instructor')
             .then(res => res.json())
 
             .then(data => {setInstructors(data);

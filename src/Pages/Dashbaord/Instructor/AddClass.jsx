@@ -21,7 +21,7 @@ const AddClass = () => {
             price: parseFloat(data.price),
            
           };
-        fetch("http://localhost:5000/addClass", {
+        fetch("https://yoga-and-meditation-school-server-tau.vercel.app/addClass", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(classItems),

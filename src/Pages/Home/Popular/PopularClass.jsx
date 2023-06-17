@@ -7,7 +7,7 @@ const PopularClass = () => {
     const [Class, setClass] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch('https://yoga-and-meditation-school-server-tau.vercel.app/class')
             .then(res => res.json())
 
             .then(data => {setClass(data);

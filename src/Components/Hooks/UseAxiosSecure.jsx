@@ -8,7 +8,7 @@ const UseAxiosSecure = () => {
     const navigate = useNavigate(); 
   
     const axiosSecure = axios.create({
-      baseURL: 'http://localhost:5000', 
+      baseURL: 'https://yoga-and-meditation-school-server-tau.vercel.app', 
     });
   
     useEffect(() => {

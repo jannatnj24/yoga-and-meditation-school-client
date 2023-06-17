@@ -15,7 +15,7 @@ const SocialLogin = () => {
         .then(result=>{
             const user=result.user;
             const storeUser = { name: user.displayName, email: user.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://yoga-and-meditation-school-server-tau.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
